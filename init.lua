@@ -27,13 +27,16 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
     lazy = false,
     dependencies = {"nvim-tree/nvim-web-devicons"}
 
-}, {'neovim/nvim-lspconfig', 'hrsh7th/nvim-cmp', 'neovim/nvim-lspconfig', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline'}, {
+}, {'neovim/nvim-lspconfig'},
+                       {'hrsh7th/nvim-cmp', 'neovim/nvim-lspconfig', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
+                        'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline'},
+                         {
     'nvimdev/lspsaga.nvim',
     dependencies = {'nvim-treesitter/nvim-treesitter', -- optional
     'nvim-tree/nvim-web-devicons' -- optional
     }
-}, {
+},
+{
     'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons'}
 }, {'lewis6991/gitsigns.nvim'},
@@ -42,9 +45,11 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
     lazy = false,
     dependencies = {'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
     },
-    config = false
-}
-}, {})
+},
+ {
+    "folke/todo-comments.nvim",
+    dependencies = {"nvim-lua/plenary.nvim"}
+}}, {})
 
 require('utils')
 require('keymapping')
@@ -59,3 +64,4 @@ require('nvimcmp')
 require('lspsagaconfig')
 require('lualineconfig')
 require('gitsignsconfig')
+require('todoconfig')
