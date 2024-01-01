@@ -27,19 +27,30 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
     lazy = false,
     dependencies = {"nvim-tree/nvim-web-devicons"}
 
-}, {
-    'akinsho/flutter-tools.nvim',
-    lazy = false,
-    dependencies = {'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
-    },
-    config = true
-}}, {})
+}, {'neovim/nvim-lspconfig', 'hrsh7th/nvim-cmp', 'neovim/nvim-lspconfig', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline'}, {
+    'nvimdev/lspsaga.nvim',
+    dependencies = {'nvim-treesitter/nvim-treesitter', -- optional
+    'nvim-tree/nvim-web-devicons' -- optional
+    }
+} -- {
+--     'akinsho/flutter-tools.nvim',
+--     lazy = false,
+--     dependencies = {'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
+--     },
+--     config = false
+-- }
+}, {})
 
 require('utils')
 require('keymapping')
 require('linenumber').setup()
 require('autosave').setup()
 require('shell')
-require('flutter')
+-- require('flutter')
 require('githubnvimtheme')
 require('nvimtree')
+require('dartlsp')
+require('nvimcmp')
+require('lspsagaconfig')
+
