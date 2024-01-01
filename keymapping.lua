@@ -36,3 +36,43 @@ vim.api.nvim_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', {
     noremap = true,
     silent = true
 })
+
+-- Flutter
+
+vim.api.nvim_set_keymap('n', '<leader>far', ':FlutterRun<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fr', ':FlutterReload<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fhr', ':FlutterRestart<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fo', ':FlutterOutlineToggle<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>faq', ':FlutterQuit<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fod', ':FlutterOpenDevTools<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fe', ':FlutterEmulators<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fpg', ':FlutterPubGet<CR>', {
+    noremap = true,
+    silent = true
+})
+vim.api.nvim_set_keymap('n', '<leader>fd', ':FlutterDevices<CR>', {
+    noremap = true,
+    silent = true
+})
+
