@@ -75,4 +75,9 @@ vim.api.nvim_set_keymap('n', '<leader>fd', ':FlutterDevices<CR>', {
     noremap = true,
     silent = true
 })
+--Todo-comments
+vim.api.nvim_set_keymap('n', '<leader>tw', ':TodoLocList<CR>', {
+    noremap = true,
+    silent = true
+})
 

@@ -11,7 +11,7 @@ require('todo-comments').setup({
             -- signs = false, -- configure signs for some keywords individually
         },
         TODO = {
-            icon = "k ",
+            icon = " ",
             color = "info"
         },
         HACK = {
