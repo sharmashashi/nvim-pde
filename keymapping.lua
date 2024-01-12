@@ -1,7 +1,10 @@
 -- Telescope
 -- Configure keymaps for telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>p', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>gc', builtin.git_commits,{})
+vim.keymap.set('n', '<leader>b', builtin.git_branches,{})
 
 -- NvimTree
 -- Toggle NvimTree
@@ -47,7 +50,7 @@ vim.api.nvim_set_keymap('n', '<leader>fr', ':FlutterReload<CR>', {
     noremap = true,
     silent = true
 })
-vim.api.nvim_set_keymap('n', '<leader>fhr', ':FlutterRestart<CR>', {
+vim.api.nvim_set_keymap('n', '<leader>ffr', ':FlutterRestart<CR>', {
     noremap = true,
     silent = true
 })
@@ -76,8 +79,10 @@ vim.api.nvim_set_keymap('n', '<leader>fd', ':FlutterDevices<CR>', {
     silent = true
 })
 --Todo-comments
-vim.api.nvim_set_keymap('n', '<leader>tw', ':TodoLocList<CR>', {
+vim.api.nvim_set_keymap('n', '<leader>e', ':TodoTelescope<CR>', {
     noremap = true,
     silent = true
 })
 
+-- Clear search
+vim.api.nvim_set_keymap('n', '<leader>cs', ':nohlsearch<CR>',{})
