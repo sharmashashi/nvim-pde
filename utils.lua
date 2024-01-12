@@ -10,6 +10,7 @@ vim.cmd([[tnoremap <Esc> <C-\><C-n>]])
 function FormatCurrentFile()
     vim.cmd(":!dart format %")
     vim.fn.feedkeys("<CR>", "n")
+    vim.cmd(":FlutterReload")
 end
 
 -- Map <Leader>df to call the format function

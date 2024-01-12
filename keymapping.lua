@@ -1,8 +1,8 @@
 -- Telescope
 -- Configure keymaps for telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>p', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ws', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>gc', builtin.git_commits,{})
 vim.keymap.set('n', '<leader>b', builtin.git_branches,{})
 
