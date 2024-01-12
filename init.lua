@@ -56,6 +56,11 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
 	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 	-- install jsregexp (optional!).
 	build = "make install_jsregexp"
+},
+{
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
 }
 }, {})
 
