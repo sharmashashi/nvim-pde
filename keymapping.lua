@@ -3,8 +3,8 @@
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>p', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ws', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>gc', builtin.git_commits,{})
-vim.keymap.set('n', '<leader>b', builtin.git_branches,{})
+vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
+vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 
 -- NvimTree
 -- Toggle NvimTree
@@ -42,47 +42,29 @@ vim.api.nvim_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', {
 
 -- Flutter
 
-vim.api.nvim_set_keymap('n', '<leader>far', ':FlutterRun<CR>', {
+-- Command to trigger running all Flutter tools
+vim.api.nvim_set_keymap("n", "<leader>far", ":lua run_flutter_tools()<CR>", {
     noremap = true,
     silent = true
 })
-vim.api.nvim_set_keymap('n', '<leader>fr', ':FlutterReload<CR>', {
+vim.api.nvim_set_keymap('n', '<leader>fr', ':lua flutter_hot_reload()<CR>', {
     noremap = true,
     silent = true
 })
-vim.api.nvim_set_keymap('n', '<leader>ffr', ':FlutterRestart<CR>', {
+vim.api.nvim_set_keymap('n', '<leader>ffr', ':lua flutter_hot_restart()<CR>', {
     noremap = true,
     silent = true
 })
-vim.api.nvim_set_keymap('n', '<leader>fo', ':FlutterOutlineToggle<CR>', {
+vim.api.nvim_set_keymap('n', '<leader>faq', ':lua flutter_quit_app()<CR>', {
     noremap = true,
     silent = true
 })
-vim.api.nvim_set_keymap('n', '<leader>faq', ':FlutterQuit<CR>', {
-    noremap = true,
-    silent = true
-})
-vim.api.nvim_set_keymap('n', '<leader>fod', ':FlutterOpenDevTools<CR>', {
-    noremap = true,
-    silent = true
-})
-vim.api.nvim_set_keymap('n', '<leader>fe', ':FlutterEmulators<CR>', {
-    noremap = true,
-    silent = true
-})
-vim.api.nvim_set_keymap('n', '<leader>fpg', ':FlutterPubGet<CR>', {
-    noremap = true,
-    silent = true
-})
-vim.api.nvim_set_keymap('n', '<leader>fd', ':FlutterDevices<CR>', {
-    noremap = true,
-    silent = true
-})
---Todo-comments
+vim.api.nvim_set_keymap("n", "<leader>fe", ":lua show_flutter_emulators()<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<leader>e', ':TodoTelescope<CR>', {
     noremap = true,
     silent = true
 })
 
 -- Clear search
-vim.api.nvim_set_keymap('n', '<leader>cs', ':nohlsearch<CR>',{})
+vim.api.nvim_set_keymap('n', '<leader>cs', ':nohlsearch<CR>', {})

@@ -40,12 +40,12 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
     'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons'}
 }, {'lewis6991/gitsigns.nvim'},
-{
-    'akinsho/flutter-tools.nvim',
-    lazy = false,
-    dependencies = {'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
-    },
-},
+--{
+  --  'akinsho/flutter-tools.nvim',
+    --lazy = false,
+    --dependencies = {'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
+    --},
+--},
  {
     "folke/todo-comments.nvim",
     dependencies = {"nvim-lua/plenary.nvim"}
@@ -69,7 +69,7 @@ require('keymapping')
 require('linenumber').setup()
 require('autosave').setup()
 require('shell')
-require('flutter')
+require('flutter.flutter')
 require('githubnvimtheme')
 require('nvimtree')
 require('dartlsp')

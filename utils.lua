@@ -1,5 +1,5 @@
--- change split window focus
-vim.api.nvim_set_keymap('n', '<leader>w', '<C-w>w', {
+-- change split buff focus
+vim.api.nvim_set_keymap('n', '<leader>bc', '<C-w>w', {
     noremap = true,
     silent = true
 })
@@ -10,7 +10,6 @@ vim.cmd([[tnoremap <Esc> <C-\><C-n>]])
 function FormatCurrentFile()
     vim.cmd(":!dart format %")
     vim.fn.feedkeys("<CR>", "n")
-    vim.cmd(":FlutterReload")
 end
 
 -- Map <Leader>df to call the format function
