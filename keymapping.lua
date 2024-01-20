@@ -39,6 +39,11 @@ vim.api.nvim_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', {
     noremap = true,
     silent = true
 })
+-- Go to definition
+vim.api.nvim_set_keymap('n', '<leader>gd', ':Lspsaga goto_definition<CR>', {
+    noremap = true,
+    silent = true
+})
 
 -- Flutter
 
