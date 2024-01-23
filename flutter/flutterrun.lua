@@ -94,7 +94,9 @@ function show_flutter_devices()
         height = height,
         row = (vim.fn.winheight(0) - height) / 2,
         col = (vim.fn.winwidth(0) - 30) / 2,
-        style = "minimal"
+        style = "minimal",
+	zindex = 50,
+	border = "rounded"
     })
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<CR>", ":lua launch_selected_device()<CR>", {

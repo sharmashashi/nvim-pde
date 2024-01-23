@@ -13,11 +13,14 @@ if not vim.loop.fs_stat(lazypath) then
          lazypath})
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({{'mfussenegger/nvim-dap'}, {
-    'projekt0n/github-nvim-theme',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000 -- make sure to load this before all the other start plugins
-}, {
+require("lazy").setup({{'mfussenegger/nvim-dap'}, 
+{
+  "folke/tokyonight.nvim",
+  priority = 1000,
+  lazy = false 
+},
+
+{
     'nvim-telescope/telescope.nvim',
     tag = '0.1.x',
     dependencies = {'nvim-lua/plenary.nvim'}
@@ -40,12 +43,6 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
     'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons'}
 }, {'lewis6991/gitsigns.nvim'},
---{
-  --  'akinsho/flutter-tools.nvim',
-    --lazy = false,
-    --dependencies = {'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
-    --},
---},
  {
     "folke/todo-comments.nvim",
     dependencies = {"nvim-lua/plenary.nvim"}
@@ -64,13 +61,13 @@ require("lazy").setup({{'mfussenegger/nvim-dap'}, {
 }
 }, {})
 
+
 require('utils')
 require('keymapping')
 require('linenumber').setup()
 require('autosave').setup()
 require('shell')
 require('flutter.flutter')
-require('githubnvimtheme')
 require('nvimtree')
 require('dartlsp')
 require('nvimcmp')
@@ -79,3 +76,4 @@ require('lualineconfig')
 require('gitsignsconfig')
 require('todoconfig')
 require('dapconfig')
+require('tokyonightconfig')

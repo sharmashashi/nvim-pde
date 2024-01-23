@@ -72,6 +72,8 @@ function show_flutter_emulators()
         row = row,
         col = col,
         style = "minimal",
+	zindex = 50,
+	border = "rounded"
     })
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<CR>", ":lua launch_selected_emulator()<CR>", { noremap = true, silent = true })
