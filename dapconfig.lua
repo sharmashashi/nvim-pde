@@ -1,32 +1,21 @@
--- Dart / Flutter
 local dap = require('dap')
-dap.adapters.dart = {
-  type = 'executable',
-  command = 'dart',
-  args = {'debug_adapter'}
-}
-dap.adapters.flutter = {
-  type = 'executable',
-  command = 'flutter',
-  args = {'debug_adapter'}
-}
-dap.configurations.dart = {
-  {
-    type = "dart",
-    request = "launch",
-    name = "Launch dart",
-    dartSdkPath = "~/Tools/flutter/bin/cache/dart-sdk/bin/dart", -- ensure this is correct
-    flutterSdkPath = "~/Tools/flutter/bin/flutter",                  -- ensure this is correct
-    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
-    cwd = "${workspaceFolder}",
-  },
-  {
-    type = "flutter",
-    request = "launch",
-    name = "Launch flutter",
-    dartSdkPath = "~/Tools/flutter/bin/cache/dart-sdk/bin/dart", -- ensure this is correct
-    flutterSdkPath = "~/Tools/flutter/bin/flutter",             -- ensure this is correct
-    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
-    cwd = "${workspaceFolder}",
+
+  dap.adapters.dart = {
+    type = "executable",
+    -- As of this writing, this functionality is open for review in https://github.com/flutter/flutter/pull/91802
+    command = "flutter",
+    args = {"debug_adapter"}
   }
-}
+  dap.configurations.dart = {
+    {
+      type = "dart",
+      request = "launch",
+      name = "Launch Flutter Program",
+      -- The nvim-dap plugin populates this variable with the filename of the current buffer
+      program = "${file}",
+      -- The nvim-dap plugin populates this variable with the editor's current working directory
+      cwd = "${workspaceFolder}",
+      -- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
+      toolArgs = {"-d", "macos"}
+    }
+  }
