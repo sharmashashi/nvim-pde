@@ -43,10 +43,10 @@ require("lazy").setup({{'mfussenegger/nvim-dap'},
     'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons'}
 }, {'lewis6991/gitsigns.nvim'},
- {
-    "folke/todo-comments.nvim",
-    dependencies = {"nvim-lua/plenary.nvim"}
-},
+ --{
+    --"folke/todo-comments.nvim",
+    --dependencies = {"nvim-lua/plenary.nvim"}
+--},
 {
 	"L3MON4D3/LuaSnip",
 	-- follow latest release.
@@ -74,6 +74,6 @@ require('nvimcmp')
 require('lspsagaconfig')
 require('lualineconfig')
 require('gitsignsconfig')
-require('todoconfig')
+--require('todoconfig')
 require('dapconfig')
 require('tokyonightconfig')

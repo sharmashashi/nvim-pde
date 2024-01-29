@@ -45,6 +45,11 @@ vim.api.nvim_set_keymap('n', '<leader>gd', ':Lspsaga goto_definition<CR>', {
     silent = true
 })
 
+vim.api.nvim_set_keymap('n', '<leader>e', ':Lspsaga show_workspace_diagnostics<CR>', {
+    noremap = true,
+    silent = true
+})
+
 -- Flutter
 
 -- Command to trigger running all Flutter tools
@@ -66,10 +71,6 @@ vim.api.nvim_set_keymap('n', '<leader>faq', ':lua flutter_quit_app()<CR>', {
 })
 vim.api.nvim_set_keymap("n", "<leader>fe", ":lua show_flutter_emulators()<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>e', ':TodoTelescope<CR>', {
-    noremap = true,
-    silent = true
-})
 
 -- Clear search
 vim.api.nvim_set_keymap('n', '<leader>cs', ':nohlsearch<CR>', {})
