@@ -79,3 +79,4 @@ vim.api.nvim_set_keymap('n', '<leader>cs', ':nohlsearch<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>br', ":lua require'dap'.toggle_breakpoint()<CR>",{})
 vim.api.nvim_set_keymap('n', '<leader>dc', ":lua require'dap'.continue()<CR>",{})
 vim.api.nvim_set_keymap('n', '<leader>do', ":lua require'dap'.repl.open()<CR>",{})
+

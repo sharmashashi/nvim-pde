@@ -65,7 +65,7 @@ require("lazy").setup({{'mfussenegger/nvim-dap'},
 require('utils')
 require('keymapping')
 require('linenumber').setup()
-require('autosave').setup()
+-- require('autosave').setup()
 require('shell')
 require('flutter.flutter')
 require('nvimtree')

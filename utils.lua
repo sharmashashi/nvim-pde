@@ -9,7 +9,7 @@ vim.cmd([[tnoremap <Esc> <C-\><C-n>]])
 -- command to save, format and re load the current dart file
 function FormatCurrentFile()
     vim.cmd(":!dart format %")
-    vim.fn.feedkeys("<CR>", "n")
+    --vim.fn.feedkeys("<CR>", "n")
 end
 
 -- Map <Leader>df to call the format function

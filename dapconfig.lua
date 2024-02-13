@@ -2,7 +2,6 @@ local dap = require('dap')
 
   dap.adapters.dart = {
     type = "executable",
-    -- As of this writing, this functionality is open for review in https://github.com/flutter/flutter/pull/91802
     command = "flutter",
     args = {"debug_adapter"}
   }
@@ -16,6 +15,10 @@ local dap = require('dap')
       -- The nvim-dap plugin populates this variable with the editor's current working directory
       cwd = "${workspaceFolder}",
       -- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
-      toolArgs = {"-d", "macos"}
+      --toolArgs = {"-d", "macos"}
+      --toolArgs = {"-d", "chrome"}
+      toolArgs = {"-d", "43A7BCC1-E050-4BD7-9A2F-FB3EDAAB9B85"}
+      --toolArgs = {"-d", "emulator-5554"}
+      
     }
   }
