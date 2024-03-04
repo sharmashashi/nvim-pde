@@ -6,10 +6,20 @@ vim.api.nvim_set_keymap('n', '<leader>bc', '<C-w>w', {
 -- command mode on esc on shell
 vim.cmd([[tnoremap <Esc> <C-\><C-n>]])
 
+-- Function to check if the current buffer's filetype is Dart
+local function isDartFile()
+    local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+    return filetype == 'dart'
+end
+
 -- command to save, format and re load the current dart file
 function FormatCurrentFile()
-    vim.cmd(":!dart format %")
-    --vim.fn.feedkeys("<CR>", "n")
+    if isDartFile() then
+    	vim.cmd(":!dart format %")
+    else
+	vim.cmd(":!prettier % --write")
+    end
+    vim.fn.feedkeys("<CR>","n")
 end
 
 -- Map <Leader>df to call the format function
