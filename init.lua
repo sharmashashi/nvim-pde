@@ -13,25 +13,27 @@ if not vim.loop.fs_stat(lazypath) then
             lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({ { 'mfussenegger/nvim-dap' },
+require("lazy").setup({ 
+	{ 'mfussenegger/nvim-dap' },
         {
             "folke/tokyonight.nvim",
             priority = 1000,
             lazy = false
         },
-
         {
             'nvim-telescope/telescope.nvim',
 
             tag = '0.1.x',
             dependencies = { 'nvim-lua/plenary.nvim' }
-        }, {
+        },
+	{
         "nvim-tree/nvim-tree.lua",
         version = "*",
         lazy = false,
         dependencies = { "nvim-tree/nvim-web-devicons" }
 
-    }, { 'neovim/nvim-lspconfig' },
+        }, 
+        { 'neovim/nvim-lspconfig' },
         { 'hrsh7th/nvim-cmp', 'neovim/nvim-lspconfig', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' },
         {
